@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogar Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif; /* Fuente añadida */
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #6A4C93;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        h1, h2 {
+            margin: 10px 0;
+            font-weight: 600; /* Peso de fuente similar */
+        }
+        h2 {
+            font-size: 24px; /* Tamaño ajustado */
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 100px; /* Tamaño reducido */
+            height: 100px; /* Tamaño reducido */
+            margin-right: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0; /* Aumentado para dar más espacio */
+            background-color: #6A4C93;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .experience-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #eaeaea;
+            border-radius: 5px;
+        }
+        .experience-section textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            font-family: 'Be Vietnam Pro', sans-serif; /* Fuente ajustada */
+        }
+        .experience-section button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #6A4C93;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comments {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+        .comments ul {
+            list-style-type: none; /* Sin viñetas */
+            padding: 0; /* Sin espaciado */
+        }
+        .comments li {
+            margin: 5px 0; /* Espaciado entre comentarios */
+            padding: 5px; /* Espaciado interno */
+            background-color: white; /* Fondo blanco para los comentarios */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Agradecimiento</h1>
+</header>
+
+<div class="container">
+    <div class="profile">
+        <img src="perfil.jpg" alt="Perfil">
+        <div>
+            <h2>¡Bienvenidos a Hogar Tech! 😊</h2>
+            <p>Queremos tomar un momento para agradecerte por visitar nuestra página. Tu interés y apoyo significan mucho para nosotros. En Hogar Tech, nos esforzamos por ofrecerte la mejor experiencia posible y proporcionarte contenido útil e innovador para tu hogar.</p>
+            <p>Esperamos que encuentres lo que buscas y que nuestra información te ayude a mejorar tu día a día. Cada visita, cada comentario, y cada sugerencia nos inspiran a seguir mejorando y creciendo.</p>
+            <p>Si tienes alguna pregunta o necesitas asistencia, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte y queremos que tu experiencia sea excepcional.</p>
+            <p>¡Gracias por ser parte de la comunidad de Hogar Tech! Esperamos que disfrutes de tu visita.</p>
+        </div>
+    </div>
+
+    <h2>Experiencia</h2>
+    <p>Aquí puedes añadir detalles sobre tu experiencia personal y cualquier otro aspecto relevante de la página.</p>
+
+    <div class="experience-section">
+        <h2>¿Qué tal? <span>🤔</span></h2>
+        <textarea id="comment" placeholder="Escribe tu comentario aquí..."></textarea>
+        <br>
+        <button type="button" onclick="addComment()">Enviar</button>
+    </div>
+
+    <div class="comments">
+        <h2>Comentarios Enviados</h2>
+        <ul id="commentList"></ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 La Mejor Imnovación</p>
+</footer>
+
+<script>
+    const comments = []; // Array para almacenar comentarios
+
+    function addComment() {
+        const commentInput = document.getElementById('comment');
+        const commentText = commentInput.value;
+
+        if (commentText) {
+            comments.push(commentText); // Agregar comentario al array
+            displayComments(); // Mostrar comentarios
+            commentInput.value = ''; // Limpiar el campo de texto
+        } else {
+            alert('Por favor, escribe un comentario antes de enviar.');
+        }
+    }
+
+    function displayComments() {
+        const commentList = document.getElementById('commentList');
+        commentList.innerHTML = ''; // Limpiar la lista antes de mostrar
+
+        comments.forEach(comment => {
+            const listItem = document.createElement('li');
+            listItem.textContent = comment;
+            commentList.appendChild(listItem); // Agregar comentario a la lista
+        });
+    }
+</script>
+
+</body>
+</html>

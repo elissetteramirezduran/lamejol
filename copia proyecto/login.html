@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            display: flex;
+            flex-direction: column; /* Cambia a columna */
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Limitar el ancho máximo */
+            box-sizing: border-box;
+        }
+        .image-container {
+            display: flex;
+            justify-content: flex-start; /* Alinear a la izquierda */
+            margin-bottom: 20px; /* Espaciado inferior */
+        }
+        .image-container img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: left;
+            margin: 10px 0; /* Espacio */
+            display: flex;
+            align-items: center; /* Alinear icono y texto */
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6A4C93;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #5a3e7b;
+        }
+        .input-container {
+            position: relative;
+        }
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            display: none; /* Ocultar por defecto */
+        }
+        .input-container:focus-within .toggle-password {
+            display: block; /* Mostrar cuando el campo está enfocado */
+        }
+        .icon-container {
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="image-container">
+        <img src="hogar.jpg" alt="Descripción de la imagen">
+    </div>
+    <h2>
+        <span class="icon-container">👤</span>Iniciar Sesión
+    </h2>
+    <input type="text" placeholder="Nombre Completo" id="fullName" required>
+    <input type="text" placeholder="Correo Electrónico" id="email" required>
+    <input type="text" placeholder="Dirección de Envío" id="address" required>
+    <input type="text" placeholder="Número de Teléfono" id="phone" required>
+    <input type="password" placeholder="Contraseña" id="password" required>
+    
+    <h2>
+        <span class="icon-container">👤</span>Tarjeta de Crédito
+    </h2>
+    <input type="text" placeholder="Número de Tarjeta" id="creditCardNumber" required maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+    <input type="text" placeholder="Nombre en la Tarjeta" id="cardName" required>
+    
+    <div class="input-container">
+        <input type="text" placeholder="Fecha de Expiración (MM/AA)" id="expiryDate" required>
+    </div>
+    
+    <div class="input-container">
+        <input type="password" placeholder="Código de Seguridad" id="cvv" required maxlength="3">
+        <span class="toggle-password" onclick="toggleCVV()">👤</span>
+    </div>
+
+    <button type="button" onclick="login()">Iniciar Sesión</button>
+</div>
+
+<script>
+    function login() {
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('password').value;
+        const creditCardNumber = document.getElementById('creditCardNumber').value;
+        const cardName = document.getElementById('cardName').value;
+        const expiryDate = document.getElementById('expiryDate').value;
+        const cvv = document.getElementById('cvv').value;
+
+        // Validar que todos los campos estén llenos
+        if (fullName && email && address && phone && password && creditCardNumber && cardName && expiryDate && cvv) {
+            alert('Sesión iniciada con éxito');
+            window.location.href = 'index.html';
+        } else {
+            alert('Por favor, completa todos los campos.');
+        }
+    }
+
+    function toggleCVV() {
+        const cvvInput = document.getElementById('cvv');
+        const cvvType = cvvInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        cvvInput.setAttribute('type', cvvType);
+    }
+</script>
+
+</body>
+</html>

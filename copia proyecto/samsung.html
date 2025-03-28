@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos Samsung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+        }
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #6A4C93;
+        }
+        .device-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .device-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+        .device-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+        .price {
+            font-size: 1.2em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .color-options {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+        .color-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .color-circle:hover {
+            border: 2px solid #6A4C93;
+        }
+        .selected {
+            border: 2px solid #6A4C93;
+        }
+        .add-to-cart {
+            margin-top: 10px;
+            background-color: #6A4C93;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-to-cart:hover {
+            background-color: #5a3e7b;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #6A4C93;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cart-icon" onclick="viewCart()">
+    🛒 <!-- Icono-->
+</div>
+
+<h1>Dispositivos Samsung Disponibles</h1>
+<div class="device-container">
+    <div class="device-card">
+        <img src="Galaxy-S21-Ultra.webp" alt="Galaxy-S21-Ultra">
+        <h3>Galaxy-S21-Ultra</h3>
+        <p class="price">$999</p>
+        <div class="color-options">
+            <div class="color-circle" style="background-color: rgb(81, 117, 182);" onclick="selectColor(this, 'Azul')"></div>
+            <div class="color-circle" style="background-color: rgb(10, 10, 10);" onclick="selectColor(this, 'Negro')"></div>
+            <div class="color-circle" style="background-color: red;" onclick="selectColor(this, 'Rojo')"></div>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Galaxy-S21-Ultra', 999, 'Galaxy-S21-Ultra.webp')">Agregar al carrito</button>
+    </div>
+    <div class="device-card">
+        <img src="s23-ultra.jpg" alt="Galaxy-S23-Ultra">
+        <h3>Galaxy-S23-Ultra</h3>
+        <p class="price">$799</p>
+        <div class="color-options">
+            <div class="color-circle" style="background-color: rgb(218, 168, 224);" onclick="selectColor(this, 'Lavanda')"></div>
+            <div class="color-circle" style="background-color: rgb(226, 96, 238);" onclick="selectColor(this, 'Púrpura')"></div>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Galaxy-S23-Ultra', 799, 's23-ultra.jpg')">Agregar al carrito</button>
+    </div>
+    <div class="device-card">
+        <img src="samsung 9 pro.avif" alt="Samsung NoteBook 9 Pro">
+        <h3>Laptop 9 pro</h3>
+        <p class="price">$1199</p>
+        <div class="color-options">
+            <div class="color-circle" style="background-color: rgb(8, 8, 8);" onclick="selectColor(this, 'Negro')"></div>
+            <div class="color-circle" style="background-color: silver;" onclick="selectColor(this, 'Plata')"></div>
+        </div>
+        <button class="add-to-cart" onclick="addToCart('Notebook 9 Pro', 1199, 'samsung 9 pro.avif')">Agregar al carrito</button>
+    </div>
+    <!-- Agrega más dispositivos aquí -->
+</div>
+
+<footer>
+    <p>&copy; 2025 La Mejor Innovación</p>
+</footer>
+
+<script>
+    let selectedColor = '';
+
+    function selectColor(element, colorName) {
+        const circles = document.querySelectorAll('.color-circle');
+        circles.forEach(circle => {
+            circle.classList.remove('selected');
+        });
+        element.classList.add('selected');
+        selectedColor = colorName; // Guardar el nombre del color
+    }
+
+    function addToCart(device, price, image) {
+        if (selectedColor) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const item = { device, color: selectedColor, price, image }; // Añade la imagen al objeto
+            cartItems.push(item);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            alert(`${device} en color ${selectedColor} ha sido agregado al carrito.`);
+            // No redirigir automáticamente
+        } else {
+            alert('Por favor, selecciona un color.');
+        }
+    }
+
+    function viewCart() {
+        window.location.href = 'cart.html'; // Redirige a cart.html cuando se hace clic en el icono del carrito
+    }
+</script>
+
+</body>
+</html>

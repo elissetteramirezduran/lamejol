@@ -1,0 +1,189 @@
+:root {
+  --white: #ffffff;
+  --cultured: hsl(225, 20%, 96%);
+  --onyx: hsl(207, 8%, 21%);
+  --gray-white: #F2F2F2;
+  --gray: #333333;
+  --gray-medium: #E4E4E4;
+  --gray-strong: #cbcbcb;
+  --gray-semi-strong: #F6F5F6;
+  --black: #000000;
+  --blue-lite: #DCE6FA; /* Fondo */
+  --blue-main: #6A4C93; /* Cambiado a morado */
+  --blue-dark: #1E3A8A;
+  --blue-full-dark: #253985;
+  --blue-alternative: #96C8FF;
+  --blue-death: #F5FAFF;
+  --gray-main: #6B7280;
+}
+
+html {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  scroll-behavior: smooth; 
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.--inline-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 42px;
+}
+
+.logo {
+  font-size: 18px;
+}
+
+.--block-container {  
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: var(--blue-main); /* Cambiado a morado */
+  height: 72px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.--link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black); /* Letras en negro */
+  border: 1px solid var(--white); /* Borde blanco */
+  padding: 8px 16px; /* Espaciado interno */
+  border-radius: 6px; /* Bordes redondeados */
+}
+
+.--button, .--button-white {
+  display: flex;
+  padding-inline: 16px;
+  padding-block: 8px;
+  border: 1px solid #E4E4E4; 
+  border-radius: 6px;
+  color: var(--black); /* Letra en negro */
+}
+
+.--button-white {
+  width: fit-content;
+  padding-block: 12px;
+  padding-inline: 32px;
+  background-color: var(--white);
+  color: var(--blue-main);
+}
+
+.--title {
+  font-size: 60px;
+  color: var(--black); /* Letra en negro */
+}
+
+.--desc {
+  font-size: 20px;
+  color: var(--black); /* Letra en negro */
+}
+
+.--section {  
+  padding-block: 160px;
+}
+
+.--section-title {  
+  font-size: 3rem;
+  color: var(--blue-dark);
+}
+
+.--section-desc {
+  font-size: 1.25rem; 
+  color: var(--gray-main);
+}
+
+.--three-card-container {   
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Cambiado a 3 columnas */
+  gap: 20px; /* Espacio entre los cuadros */
+  margin-top: 40px; /* Espacio adicional arriba de los cuadros */
+}
+
+.--card { 
+  padding: 24px;
+  border-radius: 8px;
+  background-color: var(--white);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  text-align: center; /* Centrar texto dentro de los cuadros */
+}
+
+.--subtitle { 
+  font-size: 1.25rem;
+  color: var(--blue-dark);
+}
+
+.--self-centered {
+  margin-inline: auto;
+}
+
+.--gap-8 { 
+  gap: 8px;
+}
+
+/* Modificadores */ 
+.--gap-10 {
+  gap: 10px;
+}
+
+.--gap-12 {
+  gap: 12px;
+}
+
+.--no-beetwen {
+  justify-content: initial;
+}
+
+.--no-padding-inline { 
+  padding-inline: initial;
+}
+
+.--text-centered { 
+  text-align: center;
+}
+
+.--bold {  
+  font-weight: 600;
+}
+
+.--flex-centered {  
+  justify-content: center;
+  align-items: center;
+}
+
+/* HERO */ 
+.hero {
+  display: flex;
+  background-color: var(--blue-main); /* Fondo morado */
+}
+
+.first-container { 
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-inline: 160px;
+  padding-block: 140px;
+  align-items: center;
+}
