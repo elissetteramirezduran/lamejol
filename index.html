@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOBOBO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=school" />
+    <style>
+        body {
+            background-color: white; /* Fondo blanco */
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0; /* Aumenta para dar más espacio */
+            background-color: #6A4C93; /* Fondo morado del footer */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-media {
+            background-color: #6A4C93; /* Fondo morado */
+            padding: 20px;
+            border-radius: 8px; /* Bordes redondeados */
+            margin: 20px 0; /* Espaciado superior e inferior */
+        }
+        .social-links {
+            display: flex;
+            flex-direction: column; /* Colocar enlaces en columna */
+            align-items: center; /* Centrar enlaces */
+        }
+        .social-links a {
+            background-color: #6A4C93; /* Fondo morado para los enlaces */
+            color: white; /* Texto blanco */
+            padding: 10px 20px; /* Espaciado interno */
+            margin: 5px 0; /* Espaciado entre enlaces */
+            text-decoration: none; /* Sin subrayado */
+            border-radius: 8px; /* Bordes redondeados */
+            width: 100%; /* Ancho completo */
+            text-align: center; /* Centrar texto */
+        }
+        .social-links a:hover {
+            background-color: #5a3e7b; /* Color más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="--inline-container header-container">
+            <h1 class="logo">ACME</h1> 
+            <nav>
+                <a href="#filosofia-institucional" class="--link">Sobre Nosotros</a> 
+                <a href="apple.html" class="--link">APPLE</a> 
+                <a href="samsung.html" class="--link">SAMSUNG</a> 
+                <a href="xiaomi.html" class="--link">XIAOMI</a> 
+                <a href="login.html" class="--button">Iniciar</a>
+            </nav>
+        </div> 
+    </header>
+    <main>
+        <section class="hero"> 
+            <div class="first-container">
+                <div class="--block-container --gap-12">
+                    <h1 class="--title">Hogar <br> Tech</h1>
+                    <p class="--desc">Bienvenido a Hogar Tech, tu destino en línea para la compra de celulares de última generación.<br><br></p>  
+                    <div class="--inline-container --no-beetwen --no-padding-inline --gap-8"> 
+                        <a href="informacion.html" class="--button-white">Más...</a> 
+                        <a href="explora.html" class="--button-white">Explorar</a>
+                    </div>
+                </div>
+                <img src="apple.jpg" alt="" width="375" height="375">
+            </div>
+        </section>
+        <section class="--section --gap-12" id="filosofia-institucional">
+            <h2 class="--section-title --text-centered">Filosofía Institucional</h2>
+            <p class="--section-desc --text-centered --bold">Nuestra filosofía institucional se fundamenta en la búsqueda constante de la excelencia y la innovación.<br> Creemos en el poder de la tecnología para transformar vidas y mejorar la comunicación.</p>
+            <div class="--three-card-container">
+                <div class="--card --flex-centered">
+                    <span class="material-symbols-outlined --self-centered">school</span>
+                    <h3 class="--subtitle --text-centered">Misión</h3>
+                    <p class="--text-centered">Nuestra misión es ofrecer a nuestros clientes la mejor selección de celulares de última generación, combinando calidad, innovación y un servicio excepcional.</p>
+                </div>
+                <div class="--card --flex-centered">
+                    <h3 class="--subtitle --text-centered">Valores</h3>
+                    <p class="--text-centered">Nuestros valores se centran en la integridad, la innovación y el compromiso con la satisfacción del cliente.</p>
+                </div>
+                <div class="--card --flex-centered">
+                    <h3 class="--subtitle --text-centered">Visión</h3>
+                    <p class="--text-centered">Nuestra visión es ser líderes en el mercado de tecnología, ofreciendo productos que mejoren la vida de nuestros clientes.</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="social-media">
+                <h3>Conéctate con nosotros</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                    <a href="mailto:tuemail@ejemplo.com">Correo Electrónico</a>
+                    <a href="https://wa.me/tu_numero_de_telefono" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+            <p>&copy; 2025 La Mejor Innovación</p>
+        </footer>
+    </main>
+</body>
+</html>
